@@ -3,33 +3,32 @@ package letrando
 import javafx.beans.property.SimpleStringProperty
 import javafx.scene.control.Alert
 import javafx.scene.paint.Color
-import tornadofx.*;
-import org.litote.kmongo.*;
+import tornadofx.*
 import java.time.LocalDate
+import java.net.Socket
+import Requests.allPlayers;
+import com.mongodb.util.JSON
+import java.io.*
 
 
 data class Player(val name:String, val time:Double = 0.0,val date : LocalDate = LocalDate.now())
 
 class Letrando:App(MyView::class)
 
-val mongo = KMongo.createClient()
-val db = mongo.getDatabase("Letrando")
-val players = db.getCollection<Player>()
+val client = Socket("127.0.0.1",8080)
+var out = PrintWriter(client.getOutputStream(),true)
+var input = InputStreamReader(client.getInputStream())
+var allPlayersList : String?=null;
 
 class Records:View(){
     override val root = vbox()
-    val allPlayers = players.find()
-    val allPlayersList = mutableListOf<Player>().observable()
     init {
         with(root){
-            allPlayers.forEach{
-                allPlayersList.add(element = it)
-            }
-            tableview(allPlayersList) {
-                readonlyColumn("Nome",Player::name)
-                readonlyColumn("Tempo",Player::time)
-                readonlyColumn("Data",Player::date)
-            }
+//            tableview(allPlayersList) {
+//                readonlyColumn("Nome",Player::name)
+//                readonlyColumn("Tempo",Player::time)
+//                readonlyColumn("Data",Player::date)
+//            }
             hbox {
                 button ("Ok") {
                     action {
@@ -38,16 +37,13 @@ class Records:View(){
                 }
                 button("Atualizar") {
                     action {
-                        allPlayersList.clear()
-                        allPlayers.forEach{
-                            allPlayersList.add(element = it)
+
                         }
                     }
                 }
             }
         }
     }
-}
 
 class MyView:View(){
     override val root = vbox()
@@ -79,18 +75,25 @@ class MyView:View(){
                 button ("Jogar"){
                     action {
                         playerToVerify.commit{
-                            val exists = players.findOne(Player::name eq playerToVerify.name.value)
-                            if (exists == null){
-                                players.insertOne(Player(playerToVerify.name.value))
-                            }
-                            else{
-                                alert(Alert.AlertType.ERROR, "Nome já utilizado", "Insira outro nome")
-                            }
+//                            val exists = players.findOne(Player::name eq playerToVerify.name.value)
+//                            if (exists == null){
+//                                players.insertOne(Player(playerToVerify.name.value))
+//                            }
+//                            else{
+//                                alert(Alert.AlertType.ERROR, "Nome já utilizado", "Insira outro nome")
+//                            }
                         }
                     }
                 }
                 button("Mostrar pontuações") {
                     action {
+                        out.write(allPlayers);
+                        out.flush();
+                        val size =  input.read()
+                        var buffer = CharArray(size)
+                        input.read(buffer);
+                        var allPlayersss = String(buffer);
+                        println(allPlayersss)
                         openInternalWindow<Records>()
                     }
                 }
@@ -99,10 +102,7 @@ class MyView:View(){
     }
 }
 
-fun clearDB(){
-    players.drop()
-}
 
 fun main(args: Array<String>) {
-    clearDB()
+
 }
