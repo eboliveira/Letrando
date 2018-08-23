@@ -9,3 +9,14 @@
 /home/eduardo/IdeaProjects/Server/obj/Debug/netcoreapp2.1/Server.AssemblyInfo.cs
 /home/eduardo/IdeaProjects/Server/obj/Debug/netcoreapp2.1/Server.dll
 /home/eduardo/IdeaProjects/Server/obj/Debug/netcoreapp2.1/Server.pdb
+/home/eduardo/IdeaProjects/Letrando/Server/bin/Debug/netcoreapp2.1/Server.deps.json
+/home/eduardo/IdeaProjects/Letrando/Server/bin/Debug/netcoreapp2.1/Server.runtimeconfig.json
+/home/eduardo/IdeaProjects/Letrando/Server/bin/Debug/netcoreapp2.1/Server.runtimeconfig.dev.json
+/home/eduardo/IdeaProjects/Letrando/Server/bin/Debug/netcoreapp2.1/Server.dll
+/home/eduardo/IdeaProjects/Letrando/Server/bin/Debug/netcoreapp2.1/Server.pdb
+/home/eduardo/IdeaProjects/Letrando/Server/obj/Debug/netcoreapp2.1/Server.csprojAssemblyReference.cache
+/home/eduardo/IdeaProjects/Letrando/Server/obj/Debug/netcoreapp2.1/Server.csproj.CoreCompileInputs.cache
+/home/eduardo/IdeaProjects/Letrando/Server/obj/Debug/netcoreapp2.1/Server.AssemblyInfoInputs.cache
+/home/eduardo/IdeaProjects/Letrando/Server/obj/Debug/netcoreapp2.1/Server.AssemblyInfo.cs
+/home/eduardo/IdeaProjects/Letrando/Server/obj/Debug/netcoreapp2.1/Server.dll
+/home/eduardo/IdeaProjects/Letrando/Server/obj/Debug/netcoreapp2.1/Server.pdb

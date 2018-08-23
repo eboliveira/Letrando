@@ -341,6 +341,15 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "runtime.native.System/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2052,6 +2061,34 @@
         "lib/netstandard1.0/_._",
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/11.0.2": {
+      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "type": "package",
+      "path": "newtonsoft.json/11.0.2",
+      "files": [
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.11.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
       ]
     },
     "runtime.native.System/4.3.0": {
@@ -5028,6 +5065,7 @@
       "MongoDB.Driver.Core >= 2.7.0",
       "MongoDB.Driver.GridFS >= 2.7.0",
       "NETStandard.Library >= 2.0.3",
+      "Newtonsoft.Json >= 11.0.2",
       "System.ComponentModel.TypeConverter >= 4.3.0",
       "System.Linq.Queryable >= 4.3.0",
       "mongocsharpdriver >= 2.7.0"
@@ -5040,11 +5078,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/eduardo/IdeaProjects/Server/Server.csproj",
+      "projectUniqueName": "/home/eduardo/IdeaProjects/Letrando/Server/Server.csproj",
       "projectName": "Server",
-      "projectPath": "/home/eduardo/IdeaProjects/Server/Server.csproj",
+      "projectPath": "/home/eduardo/IdeaProjects/Letrando/Server/Server.csproj",
       "packagesPath": "/home/eduardo/.nuget/packages/",
-      "outputPath": "/home/eduardo/IdeaProjects/Server/obj/",
+      "outputPath": "/home/eduardo/IdeaProjects/Letrando/Server/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
@@ -5100,6 +5138,10 @@
           "NETStandard.Library": {
             "target": "Package",
             "version": "[2.0.3, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[11.0.2, )"
           },
           "System.ComponentModel.TypeConverter": {
             "target": "Package",

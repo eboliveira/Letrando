@@ -8,6 +8,10 @@ using System.Threading;
 using MongoDB.Driver;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization;
+using Newtonsoft.Json;
+
+
 
 namespace Server
 {
@@ -23,11 +27,18 @@ namespace Server
         [BsonRequired()]
         public float time { get; set; }
 
+        [BsonElement("date")]
+        [BsonRequired()]
+        public DateTime date { get; set; }
+
         public string getName(){
             return name;
         }
         public float getTime(){
             return time;
+        }
+        public DateTime getDate(){
+            return date;
         }
         
     }
@@ -51,6 +62,11 @@ namespace Server
             var mongo = new MongoClient("mongodb://localhost:27017");
             var db = mongo.GetDatabase("Letrando");
             var playersCollection = db.GetCollection<Player>("player");
+            var p = new Player();
+            p.name = "eduardo";
+            p.time = 0;
+            p.date = DateTime.Now;
+            playersCollection.InsertOne(p);
             while(true){
                 while(stream.DataAvailable){
                     Byte[] bytes = new Byte[clientSocket.Available];
@@ -58,19 +74,13 @@ namespace Server
                     String message = System.Text.Encoding.ASCII.GetString(bytes);
                     Console.WriteLine(message);
                     if(Int32.Parse(message) == 1){
-                        var allPlayersList = playersCollection.Find(_ => true).ToList();
-                        foreach(var p in allPlayersList){
-                            Console.WriteLine(p.getName());
-                            Console.WriteLine(p.getTime());
-                        }
-
-                        // var allPlayersJson = allPlayersList.ToJson();
-                        // Console.WriteLine(allPlayersJson);
-                        // String mes = Convert.ToChar(allPlayersJson.Length) + allPlayersJson;
-                        // Console.WriteLine(mes);
-                        // Byte[] sendBytes = Encoding.UTF8.GetBytes(mes);
-                        // stream.Write(sendBytes,0,sendBytes.Length);
-                        // stream.Flush();
+                        var allPlayersList = playersCollection.Find<Player>(_ => true).ToList();
+                        var allPlayersJson = JsonConvert.SerializeObject(allPlayersList);
+                        String mes = Convert.ToChar(allPlayersJson.Length) + allPlayersJson;
+                        Console.WriteLine(mes);
+                        Byte[] sendBytes = Encoding.UTF8.GetBytes(mes);
+                        stream.Write(sendBytes,0,sendBytes.Length);
+                        stream.Flush();
                     }
                 }
             }

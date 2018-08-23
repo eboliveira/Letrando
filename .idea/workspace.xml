@@ -2,10 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1a52fe3-6cac-4bcb-a347-0b6c71d920cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/bin/Debug/netcoreapp2.1/Server.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/bin/Debug/netcoreapp2.1/Server.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/bin/Debug/netcoreapp2.1/Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Server/bin/Debug/netcoreapp2.1/Server.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/bin/Debug/netcoreapp2.1/Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Server/bin/Debug/netcoreapp2.1/Server.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/netcoreapp2.1/Server.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/netcoreapp2.1/Server.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/netcoreapp2.1/Server.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/netcoreapp2.1/Server.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/netcoreapp2.1/Server.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/netcoreapp2.1/Server.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/netcoreapp2.1/Server.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/netcoreapp2.1/Server.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/netcoreapp2.1/Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/netcoreapp2.1/Server.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/netcoreapp2.1/Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/netcoreapp2.1/Server.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/Server.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Server.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/Server.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Server.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/letrando/Letrando.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/letrando/Letrando.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/letrando.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/letrando.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/Letrando.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/Letrando.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/LetrandoKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/LetrandoKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/MyView$$special$$inlined$with$lambda$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/MyView$$special$$inlined$with$lambda$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/MyView$$special$$inlined$with$lambda$1$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/MyView$$special$$inlined$with$lambda$1$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/MyView$$special$$inlined$with$lambda$1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/MyView$$special$$inlined$with$lambda$1$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/MyView$$special$$inlined$with$lambda$1$3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/MyView$$special$$inlined$with$lambda$1$3$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/MyView$$special$$inlined$with$lambda$1$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/MyView$$special$$inlined$with$lambda$1$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/MyView$$special$$inlined$with$lambda$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/MyView$$special$$inlined$with$lambda$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/MyView$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/MyView$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/MyView$1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/MyView$1$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/MyView$1$3$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/MyView$1$3$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/MyView$1$3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/MyView$1$3$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/MyView$1$3$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/MyView$1$3$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/MyView$1$3$3$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/MyView$1$3$3$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/MyView$1$3$playerToVerify$1$name$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/MyView$1$3$playerToVerify$1$name$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/MyView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/MyView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/Records$$special$$inlined$with$lambda$1$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/Records$$special$$inlined$with$lambda$1$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/Records$$special$$inlined$with$lambda$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/Records$$special$$inlined$with$lambda$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/Records$$special$$inlined$with$lambda$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/Records$$special$$inlined$with$lambda$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/Records$1$1$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/Records$1$1$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/Records$1$1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/Records$1$1$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/letrando/Records.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/letrando/Records.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +53,12 @@
     <session id="-2128252074">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -41,13 +77,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="kt" value="3670" />
+          <entry key="kt" value="3696" />
           <entry key="txt" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Kotlin" value="3670" />
+          <entry key="Kotlin" value="3696" />
           <entry key="PLAIN_TEXT" value="27" />
         </counts>
       </usages-collector>
@@ -61,10 +97,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/letrando/Letrando.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="89" column="46" lean-forward="true" selection-start-line="89" selection-start-column="46" selection-end-line="89" selection-end-column="46" />
+            <state relative-caret-position="288">
+              <caret line="95" column="49" selection-start-line="95" selection-start-column="49" selection-end-line="95" selection-end-column="49" />
               <folding>
-                <element signature="e#18#276#0" expanded="true" />
+                <element signature="e#18#247#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,8 +167,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -288,13 +324,13 @@
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49916527" visible="true" weight="0.2579666" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49916527" visible="true" weight="0.26251897" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.5008347" side_tool="true" visible="true" weight="0.2579666" />
+      <window_info id="Favorites" order="6" sideWeight="0.5008347" side_tool="true" weight="0.2579666" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32888147" />
@@ -325,73 +361,15 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Server.kt" />
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/letrando/Server/Server.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#162#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/server/Common/Common.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/server/Common/Operator.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/server/Common/Request.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/server/Server.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="94" column="34" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#162#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/server/client.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="e#16#114#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/server/server.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-          <folding>
-            <element signature="e#16#211#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.cache/.fr-TjsCf8/robo3t-1.2.1-linux-x86_64-3e50a65/DESCRIPTION">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/.cache/.fr-1icZFB/robo3t-1.2.1-linux-x86_64-3e50a65/bin/qt.conf">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/letrando/Server/Server.kt" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/server/Common/Common.kt" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/server/Common/Operator.kt" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/server/Common/Request.kt" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/server/Server.kt" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/server/client.kt" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/server/server.kt" />
+    <entry file="file://$USER_HOME$/.cache/.fr-TjsCf8/robo3t-1.2.1-linux-x86_64-3e50a65/DESCRIPTION" />
+    <entry file="file://$USER_HOME$/.cache/.fr-1icZFB/robo3t-1.2.1-linux-x86_64-3e50a65/bin/qt.conf" />
     <entry file="file://$USER_HOME$/Documentos/Programas/robo3t-1.2.1-linux-x86_64-3e50a65/DESCRIPTION">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -402,12 +380,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/letrando/client.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/letrando/client.kt" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/letrando/Letrando.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        <state relative-caret-position="288">
+          <caret line="95" column="49" selection-start-line="95" selection-start-column="49" selection-end-line="95" selection-end-column="49" />
           <folding>
-            <element signature="e#18#143#0" expanded="true" />
+            <element signature="e#18#247#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -416,16 +395,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/letrando/Letrando.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="89" column="46" lean-forward="true" selection-start-line="89" selection-start-column="46" selection-end-line="89" selection-end-column="46" />
-          <folding>
-            <element signature="e#18#276#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
