@@ -12,7 +12,6 @@ using MongoDB.Bson.Serialization;
 using Newtonsoft.Json;
 
 
-
 namespace Server
 {
     public class Player{
@@ -29,7 +28,7 @@ namespace Server
 
         [BsonElement("date")]
         [BsonRequired()]
-        public DateTime date { get; set; }
+        public String date { get; set; }
 
         public string getName(){
             return name;
@@ -37,15 +36,30 @@ namespace Server
         public float getTime(){
             return time;
         }
-        public DateTime getDate(){
+        public String getDate(){
             return date;
         }
         
     }
-    class Program
+
+    class OperationRequest{ //classe pra identificar os requests
+            public int records;
+            public int newGame;
+
+        public OperationRequest(){
+            this.records = 1;
+            this.newGame = 2;
+        }
+    }
+    class Serv
     {
-        static void Main(string[] args)
-        {
+        MongoClient mongo;
+        IMongoDatabase db;
+        IMongoCollection<Player> playersCollection;
+        public Serv(){
+            this.mongo = new MongoClient("mongodb://localhost:27017");
+            this.db = mongo.GetDatabase("Letrando");
+            this.playersCollection = db.GetCollection<Player>("player");
             TcpListener serverSocket = new TcpListener(IPAddress.Parse("127.0.0.1"),8080);
             serverSocket.Start();
             Console.WriteLine(" >> Server Started");
@@ -58,22 +72,13 @@ namespace Server
                 clientThread.Start();
             }
         }
-        static void ClientHandler(NetworkStream stream, TcpClient clientSocket){
-            var mongo = new MongoClient("mongodb://localhost:27017");
-            var db = mongo.GetDatabase("Letrando");
-            var playersCollection = db.GetCollection<Player>("player");
-            var p = new Player();
-            p.name = "eduardo";
-            p.time = 0;
-            p.date = DateTime.Now;
-            playersCollection.InsertOne(p);
+        public void ClientHandler(NetworkStream stream, TcpClient clientSocket){
             while(true){
                 while(stream.DataAvailable){
-                    Byte[] bytes = new Byte[clientSocket.Available];
-                    stream.Read(bytes,0,bytes.Length);
-                    String message = System.Text.Encoding.ASCII.GetString(bytes);
-                    Console.WriteLine(message);
-                    if(Int32.Parse(message) == 1){
+                    Byte[] code = new Byte[1];
+                    stream.Read(code,0,1);
+                    String message = System.Text.Encoding.ASCII.GetString(code);
+                    if(Int32.Parse(message) == (new OperationRequest().records)){
                         var allPlayersList = playersCollection.Find<Player>(_ => true).ToList();
                         var allPlayersJson = JsonConvert.SerializeObject(allPlayersList);
                         String mes = Convert.ToChar(allPlayersJson.Length) + allPlayersJson;
@@ -82,8 +87,15 @@ namespace Server
                         stream.Write(sendBytes,0,sendBytes.Length);
                         stream.Flush();
                     }
+                    else if(Int32.Parse(message) == (new OperationRequest().newGame)){
+                            //implementar o inicio do jogo aqui
+                    }
                 }
             }
         }
+        static void Main(){
+            Serv s = new Serv();
+        }
     }
+
 }
