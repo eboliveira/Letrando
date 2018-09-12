@@ -4,31 +4,23 @@ import javafx.beans.property.SimpleStringProperty
 import javafx.scene.control.Alert
 import javafx.scene.paint.Color
 import tornadofx.*
-import java.net.Socket
 import com.google.gson.*
-import java.io.*
+import khttp.*;
 
 data class Player(var name :String?= null, var date : String?=null, var time : Float ?= null)
 
 class Letrando:App(MyView::class)
 
-val client = Socket("127.0.0.1",8080)
-var out = PrintWriter(client.getOutputStream(),true)
-var input = InputStreamReader(client.getInputStream())
 var allPlayersList = mutableListOf<Player>()  //lista contendo todos os players que estão no banco (definida globalmente para a tableview)
 
 class dbController(){
     init {}
     fun getRecords(){
-        out.write(Requests.records);        //escrevo no buffer qual a requisição
-        out.flush();                        //envio. resposta esperada é um ByteArray, onde a primeira posição é o tamanho do arquivo Json contendo todos os players obtidos no banco
-        val size =  input.read()       //leio a primeira posição
-        var buffer = CharArray(size)
-        input.read(buffer);                 //leio o Json
-        var allPlayersJson = String(buffer)     //converto numa string
-        var parser = JsonParser()                      //crio um parser pra fazer a conversão
-        var jsonElem = parser.parse(allPlayersJson)     //converto num JsonElement
-        var allPlayersJsonArray = jsonElem.asJsonArray    //utilizo como JsonArray
+        val resp = get("http://localhost:8080/records")
+        var allPlayersJson = resp.text
+        val parser = JsonParser()
+        var jsonElem = parser.parse(allPlayersJson)
+        var allPlayersJsonArray = jsonElem.asJsonArray   //utilizo como JsonArray
         allPlayersList.clear()
         for (i in 0 until allPlayersJsonArray.size()){     //obtenho cada um dos elementos do JsonArray e adiciono na lista (AllPlayersList)
             var playerAux = Player()
