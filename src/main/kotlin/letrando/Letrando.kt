@@ -1,13 +1,13 @@
 package letrando
 
+import com.google.gson.JsonParser
 import javafx.beans.property.SimpleStringProperty
 import javafx.scene.control.Alert
 import javafx.scene.paint.Color
 import tornadofx.*
-import com.google.gson.*
 import khttp.*;
 
-data class Player(var name :String?= null, var date : String?=null, var time : Float ?= null)
+data class Player(var name :String?= null, var date : String?=null, var score : Int ?= null)
 
 class Letrando:App(MyView::class)
 
@@ -17,15 +17,15 @@ class dbController(){
     init {}
     fun getRecords(){
         val resp = get("http://localhost:8080/records")
-        var allPlayersJson = resp.text
+        val allPlayers = resp.text
         val parser = JsonParser()
-        var jsonElem = parser.parse(allPlayersJson)
-        var allPlayersJsonArray = jsonElem.asJsonArray   //utilizo como JsonArray
+        val allPlayersJson = parser.parse(allPlayers)
+        var allPlayersJsonArray = allPlayersJson.asJsonArray   //utilizo como JsonArray
         allPlayersList.clear()
         for (i in 0 until allPlayersJsonArray.size()){     //obtenho cada um dos elementos do JsonArray e adiciono na lista (AllPlayersList)
             var playerAux = Player()
             playerAux.name = allPlayersJsonArray.get(i).asJsonObject.get("name").asString
-            playerAux.time = allPlayersJsonArray.get(i).asJsonObject.get("time").asFloat
+            playerAux.score = allPlayersJsonArray.get(i).asJsonObject.get("score").asInt
             playerAux.date = allPlayersJsonArray.get(i).asJsonObject.get("date").asString
             allPlayersList.add(playerAux)
         }
@@ -38,7 +38,7 @@ class Records:View(){       //view para mostrar as pontuações
         with(root){
             tableview(allPlayersList.observable()){
                 readonlyColumn("Nome",Player::name)
-                readonlyColumn("Tempo",Player::time)
+                readonlyColumn("Score",Player::score)
                 readonlyColumn("Data",Player::date)
                 columnResizePolicy = SmartResize.POLICY
             }
@@ -46,12 +46,6 @@ class Records:View(){       //view para mostrar as pontuações
                 button ("Ok") {
                     action {
                         close()
-                    }
-                }
-                button("Atualizar") {
-                    action {
-                        var controller = dbController()
-                        controller.getRecords()
                     }
                 }
             }
@@ -89,9 +83,18 @@ class MyView:View(){        //view inicial do jogo
                 button ("Jogar"){
                     action {
                         playerToVerify.commit{
+                            var p = org.bson.Document()
+                            p.append("name", playerToVerify.name.value)
+                            var playerJson = p.toJson()
+                            val post = post("http://localhost:8080/verify",data = playerJson)
+                            if(post.statusCode == 400){
+                                alert(Alert.AlertType.ERROR, "Nome já utilizado", "Por favor, insira outro nome")
+                            }
                             //verificação se o nome já existe aqui
+                            else{
+                                //jogo aqui
+                            }
                         }
-                        //jogo aqui
                     }
                 }
                 button("Mostrar pontuações") {
