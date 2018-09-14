@@ -3,7 +3,7 @@ package letrando
 import com.google.gson.JsonParser
 import javafx.beans.property.SimpleStringProperty
 import javafx.scene.control.Alert
-import javafx.scene.media.Media
+import javafx.scene.media.AudioClip
 import javafx.scene.media.MediaPlayer
 import javafx.scene.paint.Color
 import tornadofx.*
@@ -59,10 +59,9 @@ class Records:View(){       //view para mostrar as pontuações
 class MyView:View(){        //view inicial do jogo
     override val root = vbox()  //linha padrão do tornadofx, vbox(preenche com componentes verticalmente) pode ser substituido por outras views
     init {
-        val media = Media(File("/medias/teste.mp3").toURI().toString())
-        val mediaPlayer = MediaPlayer(media)
-        mediaPlayer.play()
+        val audio = AudioClip(MyView::class.java.getResource("/medias/bgmusic.wav").toExternalForm())
         with(root){
+            audio.play()
             setPrefSize(800.0,600.0)    //seta o tamanho da janela
             style{
                 backgroundColor += c("#88ff88")
