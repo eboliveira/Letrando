@@ -4,17 +4,15 @@ import com.google.gson.JsonParser
 import javafx.beans.property.SimpleStringProperty
 import javafx.scene.control.Alert
 import javafx.scene.media.AudioClip
-import javafx.scene.media.MediaPlayer
 import javafx.scene.paint.Color
 import tornadofx.*
 import khttp.*;
-import java.io.File
 
 data class Player(var name :String?= null, var date : String?=null, var score : Int ?= null)
 
 class Letrando:App(MyView::class)
 
-var allPlayersList = mutableListOf<Player>()  //lista contendo todos os players que estão no banco (definida globalmente para a tableview)
+var allPlayersListSorted = listOf<Player>()  //lista contendo todos os players que estão no banco (definida globalmente para a tableview)
 
 class dbController(){
     init {}
@@ -24,7 +22,7 @@ class dbController(){
         val parser = JsonParser()
         val allPlayersJson = parser.parse(allPlayers)
         var allPlayersJsonArray = allPlayersJson.asJsonArray   //utilizo como JsonArray
-        allPlayersList.clear()
+        val allPlayersList = mutableListOf<Player>()
         for (i in 0 until allPlayersJsonArray.size()){     //obtenho cada um dos elementos do JsonArray e adiciono na lista (AllPlayersList)
             var playerAux = Player()
             playerAux.name = allPlayersJsonArray.get(i).asJsonObject.get("name").asString
@@ -32,6 +30,7 @@ class dbController(){
             playerAux.date = allPlayersJsonArray.get(i).asJsonObject.get("date").asString
             allPlayersList.add(playerAux)
         }
+        allPlayersListSorted = allPlayersList.sortedBy { it.score }.reversed()
     }
 }
 
@@ -39,7 +38,7 @@ class Records:View(){       //view para mostrar as pontuações
     override val root = vbox()
     init {
         with(root){
-            tableview(allPlayersList.observable()){
+            tableview(allPlayersListSorted.observable()){
                 readonlyColumn("Nome",Player::name)
                 readonlyColumn("Score",Player::score)
                 readonlyColumn("Data",Player::date)
