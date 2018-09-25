@@ -56,7 +56,7 @@ fun main(args: Array<String>) {
             var respJson =  parser.parse(respString).asJsonObject
             var exists = players.findOne(Player::name eq respJson.get("name").asString)
             if (exists == null){
-                //players.insertOne(Player(respJson.get("name").asString, LocalDate.now().toString(),0))
+//                players.insertOne(Player(respJson.get("name").asString, LocalDate.now().toString(),0))
                 http.sendResponseHeaders(200, 0)
                 PrintWriter(http.responseBody).use { out ->
                     out.println("Avaible")

@@ -17,6 +17,7 @@ data class Words(var numeroJogo :Int ?= null, var words :JsonArray ?= null)
 
 class Letrando:App(MyView::class)
 
+var allPlayersListSorted = listOf<Player>()  //lista contendo todos os players que estão no banco (definida globalmente para a tableview)
 var allPlayersList = mutableListOf<Player>()  //lista contendo todos os players que estão no banco (definida globalmente para a tableview)
 var allGameWords = mutableListOf<Words>()
 
@@ -51,6 +52,7 @@ class dbController(){
             allGameWords.add(wordAux)
 
         }
+        allPlayersListSorted = allPlayersList.sortedBy { it.score }.reversed()
     }
 }
 
@@ -58,7 +60,7 @@ class Records:View(){       //view para mostrar as pontuações
     override val root = vbox()
     init {
         with(root){
-            tableview(allPlayersList.observable()){
+            tableview(allPlayersListSorted.observable()){
                 readonlyColumn("Nome",Player::name)
                 readonlyColumn("Score",Player::score)
                 readonlyColumn("Data",Player::date)
@@ -78,7 +80,9 @@ class Records:View(){       //view para mostrar as pontuações
 class MyView:View(){        //view inicial do jogo
     override val root = vbox()  //linha padrão do tornadofx, vbox(preenche com componentes verticalmente) pode ser substituido por outras views
     init {
+        val audio = AudioClip(MyView::class.java.getResource("/medias/bgmusic.wav").toExternalForm())
         with(root){
+            audio.play()
             setPrefSize(800.0,600.0)    //seta o tamanho da janela
             style{
                 backgroundColor += c("#88ff88")
@@ -114,9 +118,7 @@ class MyView:View(){        //view inicial do jogo
                             }
                             //verificação se o nome já existe aqui
                             else{
-                                //var controller = dbController()
-                                //controller.getWords()
-                                replaceWith<Game>()
+                                //jogo aqui
                             }
                         }
                     }
