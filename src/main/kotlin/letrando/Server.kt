@@ -70,6 +70,23 @@ fun main(args: Array<String>) {
             }
         }
 
+        createContext("/playerScore") { http -> //rota do post
+            http.responseHeaders.add("Content-type", "text/plain")
+            val resp = http.requestBody.readAllBytes()
+            val respString = String(resp)
+            val parser = JsonParser()
+            var respJson =  parser.parse(respString).asJsonObject
+            println(respJson)
+            players.insertOne(Player(respJson.get("name").asString, LocalDate.now().toString(),respJson.get("score").asInt))
+            http.sendResponseHeaders(200, 0)
+            PrintWriter(http.responseBody).use { out ->
+                out.println("Avaible")
+            }
+            //println(respJson)
+            //players.findOneAndUpdate(Player::name eq respJson.get("name").asString, )
+
+        }
+
         start()
     }
 }
